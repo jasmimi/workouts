@@ -6,24 +6,35 @@ public class Weight {
   private Time timeOfWeight;
   private Integer mass;
 
-  public Weight(Time timeOfWeight, Integer mass) {
-    this.timeOfWeight = timeOfWeight;
-    this.mass = mass;
+  Weight(Builder builder) {
+    this.timeOfWeight = builder.timeOfWeight;
+    this.mass = builder.mass;
   }
 
   public Time getTimeOfWeight() {
     return timeOfWeight;
   }
 
-  public void setTimeOfWeight(Time timeOfWeight) {
-    this.timeOfWeight = timeOfWeight;
-  }
-
   public Integer getMass() {
     return mass;
   }
+  
+  public static class Builder {
+    private Time timeOfWeight;
+    private Integer mass;
 
-  public void setMass(Integer mass) {
-    this.mass = mass;
+    public Builder timeOfWeight(Time timeOfWeight) {
+      this.timeOfWeight = timeOfWeight;
+      return this;
+    }
+
+    public Builder mass(Integer mass) {
+      this.mass = mass;
+      return this;
+    }
+
+    public Weight build() {
+      return new Weight(this);
+    }
   }
 }
