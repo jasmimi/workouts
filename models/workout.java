@@ -6,49 +6,60 @@ import java.util.Date;
 public class Workout {
   private Date date;
   private String muscleGroup;
-  private ArrayList<Set> sets = new ArrayList<>();
+  private ArrayList<Set> sets;
   private Weight weight;
 
-  public Workout(Date date, String muscleGroup, ArrayList<Set> sets, Weight weight) {
-    this.date = date;
-    this.muscleGroup = muscleGroup;
-    this.sets = sets;
-    this.weight = weight;
+  Workout(Builder builder) {
+    this.date = builder.date;
+    this.muscleGroup = builder.muscleGroup;
+    this.sets = builder.sets;
+    this.weight = builder.weight;
   }
 
   public Date getDate() {
     return date;
   }
 
-  public void setDate(Date date) {
-    this.date = date;
-  }
-
   public String getMuscleGroup() {
     return muscleGroup;
-  }
-
-  public void setMuscleGroup(String muscleGroup) {
-    this.muscleGroup = muscleGroup;
   }
 
   public ArrayList<Set> getSets() {
     return sets;
   }
 
-  public void addSet(Set set) {
-    this.sets.add(set);
-  }
-
-  public void setSets(ArrayList<Set> sets) {
-    this.sets = sets;
-  }
-
   public Weight getWeight() {
     return weight;
   }
 
-  public void setWeight(Weight weight) {
-    this.weight = weight;
+  public static class Builder {
+    private Date date;
+    private String muscleGroup;
+    private ArrayList<Set> sets;
+    private Weight weight;
+
+    public Builder date(Date date) {
+      this.date = date;
+      return this;
+    }
+
+    public Builder muscleGroup(String muscleGroup) {
+      this.muscleGroup = muscleGroup;
+      return this;
+    }
+
+    public Builder sets(ArrayList<Set> sets) {
+      this.sets = sets;
+      return this;
+    }
+
+    public Builder weight(Weight weight) {
+      this.weight = weight;
+      return this;
+    }
+
+    public Workout build() {
+      return new Workout(this);
+    }
   }
 }

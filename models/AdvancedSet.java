@@ -1,11 +1,38 @@
 package models;
 
 public interface AdvancedSet extends Set {
-  public BasicSet getFirstSet();
+  private BasicSet firstSet();
+  private BasicSet secondSet();
 
-  public void setFirstSet(BasicSet firstSet);
+  AdvancedSet(Builder builder) {
+    this.firstSet = builder.firstSet;
+    this.secondSet = builder.secondSet;
+  }
 
-  public BasicSet getSecondSet();
+  public BasicSet getFirstSet() {
+    return firstSet();
+  }
 
-  public void setSecondSet(BasicSet secondSet);
+  public BasicSet getSecondSet() {
+    return secondSet();
+  }
+
+  public static class Builder {
+    private BasicSet firstSet;
+    private BasicSet secondSet;
+
+    public Builder firstSet(BasicSet firstSet) {
+      this.firstSet = firstSet;
+      return this;
+    }
+
+    public Builder secondSet(BasicSet secondSet) {
+      this.secondSet = secondSet;
+      return this;
+    }
+
+    public AdvancedSet build() {
+      return new AdvancedSet(this);
+    }
+  }
 }

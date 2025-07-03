@@ -4,29 +4,35 @@ public class DropSet implements AdvancedSet {
   private BasicSet firstSet;
   private BasicSet secondSet;
 
-  public DropSet(BasicSet firstSet, BasicSet secondSet) {
-    if (firstSet.getName().equals(secondSet.getName())
-        && firstSet.getWeight() > secondSet.getWeight()) {
-      this.firstSet = firstSet;
-      this.secondSet = secondSet;
-    } else {
-      System.out.println("Can only dropset with the same exercise and drop in weight.");
-    }
+  DropSet(Builder builder) {
+    this.firstSet = builder.firstSet;
+    this.secondSet = builder.secondSet;
   }
 
   public BasicSet getFirstSet() {
     return firstSet;
   }
 
-  public void setFirstSet(BasicSet firstSet) {
-    this.firstSet = firstSet;
-  }
-
   public BasicSet getSecondSet() {
     return secondSet;
   }
 
-  public void setSecondSet(BasicSet secondSet) {
-    this.secondSet = secondSet;
+  public static class Builder {
+    private BasicSet firstSet;
+    private BasicSet secondSet;
+
+    public Builder firstSet(BasicSet firstSet) {
+      this.firstSet = firstSet;
+      return this;
+    }
+
+    public Builder secondSet(BasicSet secondSet) {
+      this.secondSet = secondSet;
+      return this;
+    }
+
+    public DropSet build() {
+      return new DropSet(this);
+    }
   }
 }
