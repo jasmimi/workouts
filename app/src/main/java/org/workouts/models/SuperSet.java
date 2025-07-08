@@ -1,38 +1,38 @@
-package models;
+package org.workouts.models;
 
-public interface AdvancedSet extends Set {
-  private BasicSet firstSet();
-  private BasicSet secondSet();
+public class SuperSet implements AdvancedSet {
+  private BasicSet firstSet;
+  private BasicSet secondSet;
 
-  AdvancedSet(Builder builder) {
+  SuperSet(Builder builder) {
     this.firstSet = builder.firstSet;
     this.secondSet = builder.secondSet;
   }
 
   public BasicSet getFirstSet() {
-    return firstSet();
+    return firstSet;
   }
 
   public BasicSet getSecondSet() {
-    return secondSet();
+    return secondSet;
   }
 
   public static class Builder {
     private BasicSet firstSet;
     private BasicSet secondSet;
 
-    public Builder firstSet(BasicSet firstSet) {
+    public Builder withFirstSet(BasicSet firstSet) {
       this.firstSet = firstSet;
       return this;
     }
 
-    public Builder secondSet(BasicSet secondSet) {
+    public Builder withSecondSet(BasicSet secondSet) {
       this.secondSet = secondSet;
       return this;
     }
 
-    public AdvancedSet build() {
-      return new AdvancedSet(this);
+    public SuperSet build() {
+      return new SuperSet(this);
     }
   }
 }

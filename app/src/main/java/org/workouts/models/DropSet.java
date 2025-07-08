@@ -1,4 +1,4 @@
-package models;
+package org.workouts.models;
 
 public class DropSet implements AdvancedSet {
   private BasicSet firstSet;
@@ -21,12 +21,12 @@ public class DropSet implements AdvancedSet {
     private BasicSet firstSet;
     private BasicSet secondSet;
 
-    public Builder firstSet(BasicSet firstSet) {
+    public Builder withFirstSet(BasicSet firstSet) {
       this.firstSet = firstSet;
       return this;
     }
 
-    public Builder secondSet(BasicSet secondSet) {
+    public Builder withSecondSet(BasicSet secondSet) {
       this.secondSet = secondSet;
       return this;
     }

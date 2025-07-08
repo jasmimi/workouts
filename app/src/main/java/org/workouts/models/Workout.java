@@ -1,4 +1,4 @@
-package models;
+package org.workouts.models;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,22 +38,22 @@ public class Workout {
     private ArrayList<Set> sets;
     private Weight weight;
 
-    public Builder date(Date date) {
+    public Builder withDate(Date date) {
       this.date = date;
       return this;
     }
 
-    public Builder muscleGroup(String muscleGroup) {
+    public Builder withMuscleGroup(String muscleGroup) {
       this.muscleGroup = muscleGroup;
       return this;
     }
 
-    public Builder sets(ArrayList<Set> sets) {
+    public Builder withSets(ArrayList<Set> sets) {
       this.sets = sets;
       return this;
     }
 
-    public Builder weight(Weight weight) {
+    public Builder withWeight(Weight weight) {
       this.weight = weight;
       return this;
     }

@@ -1,9 +1,9 @@
-package models;
+package org.workouts.models;
 
-import java.sql.Time;
+import java.time.LocalTime;
 
 public class Weight {
-  private Time timeOfWeight;
+  private LocalTime timeOfWeight;
   private Integer mass;
 
   Weight(Builder builder) {
@@ -11,24 +11,24 @@ public class Weight {
     this.mass = builder.mass;
   }
 
-  public Time getTimeOfWeight() {
+  public LocalTime getTimeOfWeight() {
     return timeOfWeight;
   }
 
   public Integer getMass() {
     return mass;
   }
-  
+
   public static class Builder {
-    private Time timeOfWeight;
+    private LocalTime timeOfWeight;
     private Integer mass;
 
-    public Builder timeOfWeight(Time timeOfWeight) {
+    public Builder withTimeOfWeight(LocalTime timeOfWeight) {
       this.timeOfWeight = timeOfWeight;
       return this;
     }
 
-    public Builder mass(Integer mass) {
+    public Builder withMass(Integer mass) {
       this.mass = mass;
       return this;
     }
