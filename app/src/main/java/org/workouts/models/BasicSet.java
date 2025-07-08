@@ -28,17 +28,17 @@ public class BasicSet implements Set {
     private Integer weight;
     private Integer reps;
 
-    public Builder name(String name) {
+    public Builder withName(String name) {
       this.name = name;
       return this;
     }
 
-    public Builder weight(Integer weight) {
+    public Builder withWeight(Integer weight) {
       this.weight = weight;
       return this;
     }
 
-    public Builder reps(Integer reps) {
+    public Builder withReps(Integer reps) {
       this.reps = reps;
       return this;
     }
