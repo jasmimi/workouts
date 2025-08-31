@@ -1,0 +1,28 @@
+{
+  "name": "workouts",
+  "version": "1.0.0",
+  "description": "This system is an attempt at upskilling using workplace-relevant technologies while solving a personal issue - logging my workouts in my Notes app. Similar applications (often behind paywalls) do exist, I don't have familiary with them or their tech stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasmimi/workouts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jasmimi/workouts/issues"
+  },
+  "homepage": "https://github.com/jasmimi/workouts#readme",
+  "dependencies": {
+    "react-native": "^0.81.1"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "latest",
+    "@react-native/metro-config": "latest"
+  }
+}

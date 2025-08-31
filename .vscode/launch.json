@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Mongo App",
+      "request": "launch",
+      "mainClass": "org.workouts.App",
+      "env": {
+        "MONGO_URI": "mongodb+srv://jasmineamohia:qEtRrVYI47PZNJ02@jasmimi.sfuupkj.mongodb.net/?retryWrites=true&w=majority&appName=jasmimi"
+      }
+    }
+  ]
+}
